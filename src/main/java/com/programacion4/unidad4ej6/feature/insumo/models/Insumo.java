@@ -15,12 +15,14 @@ import jakarta.persistence.FetchType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Builder;
 
 @Entity
 @Table(name = "insumos")
 @Data
 @NoArgsConstructor 
 @AllArgsConstructor
+@Builder
 public class Insumo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +35,7 @@ public class Insumo {
     private String codigoInterno;
 
     @Column(nullable = false)
-    private Double stockActual = 0.0;
+    private Long stockActual = 0L;
 
     @Column(nullable = false)
     private Boolean activo = true;

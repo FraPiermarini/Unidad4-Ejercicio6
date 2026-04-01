@@ -16,18 +16,20 @@ import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import lombok.Builder;
 @Entity
 @Table(name = "movimientos_stock")
 @Data
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor 
+@AllArgsConstructor
+@Builder
 public class MovimientoStock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private Double cantidad;
+    private Long cantidad = 0L;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
