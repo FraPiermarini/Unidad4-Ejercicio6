@@ -1,7 +1,5 @@
 package com.programacion4.unidad4ej6.feature.insumo.dtos.request;
 
-import java.math.BigDecimal;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -26,7 +24,11 @@ public class InsumoCreateDTO {
     @Pattern(regexp = "^LUMI-\\d{4}$", message = "El código interno debe seguir el formato LUMI-XXXX (donde X son números)")
     private String codigoInterno;
 
-    @Positive(message = "El precio debe ser mayor a 0")
-    @NotNull(message = "El precio es requerido")
-    private BigDecimal precio;
+    @NotNull(message = "El precio en dólares es requerido")
+    @Positive(message = "El precio en dólares debe ser mayor a 0")
+    private Double precioEnDolares;
+
+    @NotNull(message = "El valor dólar de referencia es requerido")
+    @Positive(message = "El valor dólar de referencia debe ser mayor a 0")
+    private Double valorDolarReferencia;
 }

@@ -1,8 +1,5 @@
 package com.programacion4.unidad4ej6.feature.insumo.dtos.response;
 
-import java.math.BigDecimal;
-import java.util.List;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -24,7 +21,9 @@ public class InsumoResponseDTO {
 
     private Boolean activo;
 
-    private BigDecimal precioActual;
+    private Double precioEnDolares;
 
-    private List<HistorialPrecioResponseDTO> historialPrecios;
+    private Double valorDolarReferencia;
+
+    private Double precioEnPesos;
 }
